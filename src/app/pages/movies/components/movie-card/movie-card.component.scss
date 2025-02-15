@@ -1,0 +1,40 @@
+.card-container {
+  width: 17rem;
+  height: 25rem;
+  background-size: 100% 100%
+}
+
+mat-card-content p {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.card-header-content {
+  background-color: rgba(255, 255, 255, 0.800);
+  width: -webkit-fill-available;
+  margin: 1rem;
+  position: absolute;
+  bottom: 0;
+  &.dark-mode {
+    background-color: rgba(0, 0, 0, 0.800);
+  }
+}
+
+.card-full-data-content {
+  background-color: rgba(255, 255, 255, 0.800);
+  width: -webkit-fill-available;
+  margin: 1rem;
+  height: 100%;
+  &.dark-mode {
+    background-color: rgba(0, 0, 0, 0.800);
+  }
+}
+
+.synopsis-text {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  -webkit-box-orient: vertical;
+}

@@ -12,9 +12,7 @@ export class SchemeSelectorComponent {
   isDarkModeActive = false;
 
   constructor(private colorSchemeService: ColorSchemeService) {
-    if (this.colorSchemeService.getColorScheme() === 'dark') {
-      this.isDarkModeActive = true;
-    }
+    this.isDarkModeActive = this.colorSchemeService.isDarkTheme();
   }
 
   updateTheme(): void {

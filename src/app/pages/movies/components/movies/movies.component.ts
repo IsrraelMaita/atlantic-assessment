@@ -11,7 +11,6 @@ import { Movie } from '../../models/movies.model';
 export class MoviesComponent implements OnInit {
 
   moviesList: Movie[] = [];
-  movie!: Movie;
   currentPage = 1;
   totalPages = 0;
   totalMovies = 0;
@@ -25,7 +24,6 @@ export class MoviesComponent implements OnInit {
     this.moviesService.getMovies().subscribe({
       next: (resp) => {
         this.moviesList = resp.results;
-        this.movie = this.moviesList[0];
         this.currentPage = resp.page;
         this.totalMovies = resp.total_results;
         this.totalPages = resp.total_pages;

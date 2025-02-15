@@ -1,1 +1,32 @@
-<p>movie-card works!</p>
+<mat-card
+  class="card-container"
+  [ngStyle]="{'background-image': 'url(' + movieImageURL + ')'}"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+>
+  <div *ngIf="!showFullInfo" class="card-header-content" [ngClass]="{'dark-mode': isDarkMode}">
+    <mat-card-header>
+      <mat-card-title><p>{{movie.title}}</p></mat-card-title>
+      <mat-card-subtitle>
+        <p>{{movie.release_date | date }}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+  </div>
+
+  <div *ngIf="showFullInfo" class="card-full-data-content" [ngClass]="{'dark-mode': isDarkMode}">
+    <mat-card-header>
+      <mat-card-subtitle>
+        <p>{{movie.title}}. {{movie.release_date | date }}</p>
+      </mat-card-subtitle>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <p>Synopsis:</p>
+      <p class="synopsis-text">{{ movie.overview }}</p>
+      <br>
+      <p>Rating: {{ movie.vote_average }}</p>
+      <p>Total votes: {{ movie.vote_count }}</p>
+      <p>Language: {{ movie.original_language | uppercase }}</p>
+    </mat-card-content> 
+  </div>
+</mat-card>

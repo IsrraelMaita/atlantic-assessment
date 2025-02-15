@@ -1,9 +1,7 @@
 <p>movies works!</p>
 
-<!-- <ng-container *ngFor="let movie of moviesList">
-  <app-movie-card [movie]="movie"></app-movie-card>
-</ng-container> -->
-
-<ng-container *ngIf="ready">
-  <app-movie-card [movie]="movie"></app-movie-card>
-</ng-container>
+<div class="movies-container">
+  <ng-container *ngFor="let movie of moviesList">
+    <app-movie-card [movie]="movie"></app-movie-card>
+  </ng-container>
+</div>
