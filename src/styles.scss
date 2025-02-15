@@ -1,1 +1,162 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$md-atlantic-primary-pallete: (
+  50: #e1f0ff,
+  100: #a6d4ff,
+  200: #6ab8ff,
+  300: #3f9cff,
+  400: #2f8bf6,
+  500: #2568fb,
+  600: #1f56d9,
+  700: #1a47b7,
+  800: #16388f,
+  900: #13276b,
+  A100: #b2d7ff,
+  A200: #80c1ff,
+  A400: #299ef6,
+  A700: #0a63b0,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-atlantic-secondary-pallete: (
+  50: #fef1a3,
+  100: #fee47d,
+  200: #fec457,
+  300: #fecd45,
+  400: #feb33b,
+  500: #fea927,
+  600: #f7b838,
+  700: #f4a52b,
+  800: #f18d1e,
+  900: #ed7a11,
+  A100: #f7e277,
+  A200: #f5d45c,
+  A400: #f1b628,
+  A700: #e57c05,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$md-atlantic-warn-pallete: (
+  50: #f7d0d0,
+  100: #f3a6a6,
+  200: #ec7d7d,
+  300: #e55353,
+  400: #e12b2b,
+  500: #d32f2f,
+  600: #c32727,
+  700: #b11f1f,
+  800: #9b1717,
+  900: #860f0f,
+  A100: #f7a6a6,
+  A200: #f27d7d,
+  A400: #ec2a2a,
+  A700: #c10a0a,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$atlantic-assesment-primary: mat.define-palette($md-atlantic-primary-pallete);
+$atlantic-assesment-accent: mat.define-palette($md-atlantic-secondary-pallete);
+
+// The warn palette is optional (defaults to red).
+$atlantic-assesment-warn: mat.define-palette($md-atlantic-warn-pallete);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$atlantic-assesment-theme-light: mat.define-light-theme((
+  color: (
+    primary: $atlantic-assesment-primary,
+    accent: $atlantic-assesment-accent,
+  ),
+  typography: mat.define-typography-config(),
+));
+
+$atlantic-assesment-theme-dark: mat.define-dark-theme((
+  color: (
+    primary: $atlantic-assesment-primary,
+    accent: $atlantic-assesment-accent,
+  ),
+  typography: mat.define-typography-config(),
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($atlantic-assesment-theme-light);
+
+.color-scheme-dark {
+  @include mat.all-component-colors($atlantic-assesment-theme-dark);
+}
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body {
+  &.color-scheme-dark {
+    background-color: #212121;
+    color: #ffffff;
+  }
+}
+
+:root {
+  --color-primary: #2568fb;
+  --color-accent: #fea927;
+  --color-warn: #d32f2f
+}
