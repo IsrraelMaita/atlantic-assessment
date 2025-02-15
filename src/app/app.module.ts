@@ -5,12 +5,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './modules/material.module';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { SchemeSelectorComponent } from './components/scheme-selector/scheme-selector.component';
 
 @NgModule({
   declarations: [
-    ToolbarComponent,
     AppComponent,
+    MenuComponent,
+    SchemeSelectorComponent,
   ],
   imports: [
     BrowserAnimationsModule,

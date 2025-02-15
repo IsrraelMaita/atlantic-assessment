@@ -1,0 +1,20 @@
+<div class="scheme-selector-container">
+  <mat-icon
+    [ngClass]="{
+      'theme-mode-icon--active': !isDarkModeActive,
+      'theme-mode-icon--inactive': isDarkModeActive
+    }"
+  >light_mode</mat-icon>
+  <mat-slide-toggle
+    color="accent"
+    [hideIcon]="true"
+    [checked]="isDarkModeActive"
+    (change)="updateTheme()"
+    ></mat-slide-toggle>
+  <mat-icon
+    [ngClass]="{
+      'theme-mode-icon--active': isDarkModeActive,
+      'theme-mode-icon--inactive': !isDarkModeActive
+    }"
+  >dark_mode</mat-icon>
+</div>

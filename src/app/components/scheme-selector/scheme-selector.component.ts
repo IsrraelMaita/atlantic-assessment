@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
-
 import { ColorSchemeService } from 'src/app/services/color-scheme.service';
 
 @Component({
-  selector: 'app-toolbar',
-  templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  selector: 'app-scheme-selector',
+  templateUrl: './scheme-selector.component.html',
+  styleUrls: ['./scheme-selector.component.scss']
 })
-export class ToolbarComponent {
+export class SchemeSelectorComponent {
 
   isDarkModeActive = false;
 
@@ -26,4 +25,6 @@ export class ToolbarComponent {
     this.colorSchemeService.update('dark');
     this.isDarkModeActive = true;
   }
+
+
 }

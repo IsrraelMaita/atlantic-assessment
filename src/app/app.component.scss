@@ -1,0 +1,43 @@
+:host .mat-drawer.mat-drawer-side {
+  min-width: 15rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.toolbar-container {
+  justify-content: space-between;
+}
+
+.title-container {
+  display: flex;
+  align-items: center;
+}
+
+.sidenav-container {
+  flex: 1;
+}
+
+.is-mobile .toolbar {
+  position: fixed;
+  z-index: 2;
+}
+
+.is-mobile .sidenav-container {
+  flex: 1 0 auto;
+}
+
+.theme-mode-icon--active {
+  color: var(--color-accent);
+}
+
+.theme-mode-icon--inactive {
+  color: gray;
+}

@@ -1,0 +1,17 @@
+<mat-nav-list>
+  <ng-container *ngFor="let navigationItem of navigationItems">
+    <a
+      mat-list-item
+      [routerLink]="navigationItem.routerLink"
+      [routerLinkActive]="navigationItem.routerLinkActive"
+    >
+     
+    <div class="navigation-item-container">
+      <mat-icon matPrefix>{{navigationItem.icon}}</mat-icon>
+      <p class="navigation-item-container__title">
+        {{ navigationItem.name }}
+      </p>
+    </div>
+    </a>
+  </ng-container>
+</mat-nav-list>

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component } from '@angular/core';
+
 import { ColorSchemeService } from './services/color-scheme.service';
 
 @Component({
@@ -8,8 +10,23 @@ import { ColorSchemeService } from './services/color-scheme.service';
 })
 export class AppComponent {
 
-  constructor(private colorSchemeService: ColorSchemeService) {
+  mobileQuery: MediaQueryList;
+
+  constructor(
+    private colorSchemeService: ColorSchemeService,
+    private changeDetectorRef: ChangeDetectorRef,
+    private media: MediaMatcher,
+  ) {
     this.colorSchemeService.load();
+    this.mobileQuery = this.media.matchMedia('(max-width: 600px)');
+    this.mobileQueryListener = () => this.changeDetectorRef.detectChanges();
+    this.mobileQuery.addEventListener('change',this.mobileQueryListener)
+  }
+
+  mobileQueryListener: () => void;
+
+  ngOnDestroy(): void {
+    this.mobileQuery.removeEventListener('change',this.mobileQueryListener)
   }
 
 }

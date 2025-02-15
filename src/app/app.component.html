@@ -1,2 +1,33 @@
-<app-toolbar></app-toolbar>
-<router-outlet></router-outlet>
+<div class="container" [ngClass]="{'is-mobile': mobileQuery.matches}">
+  
+  <!-- Toolbar -->
+  <mat-toolbar class="toolbar-container">
+    <!-- Menu trigger -->
+    <div class="title-container">
+      <button
+        mat-icon-button
+        (click)="sideNavbar.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>Atlantic Assesment</h1>
+    </div>
+    <app-scheme-selector></app-scheme-selector>
+  </mat-toolbar>
+  <!-- Toolbar end -->
+
+  <mat-sidenav-container class="sidenav-container">
+    
+    <!-- Menu -->
+    <mat-sidenav
+      #sideNavbar
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <app-menu></app-menu>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
