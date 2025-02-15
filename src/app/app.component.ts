@@ -1,7 +1,7 @@
 import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component } from '@angular/core';
 
-import { ColorSchemeService } from './services/color-scheme.service';
+import { ColorSchemeService } from './core/services/color-scheme.service';
 
 @Component({
   selector: 'app-root',

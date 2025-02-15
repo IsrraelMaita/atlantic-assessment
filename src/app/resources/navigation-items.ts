@@ -1,9 +1,15 @@
 export const NAVIGATION_ITEMS = [
   {
-    routerLink: 'home',
+    routerLink: 'movies',
     routerLinkActive: 'active',
-    icon: 'home',
-    name: 'Home',
+    icon: 'movie',
+    name: 'Movies',
+  },
+  {
+    routerLink: 'series',
+    routerLinkActive: 'active',
+    icon: 'tv',
+    name: 'Series',
   },
   {
     routerLink: 'graphics',

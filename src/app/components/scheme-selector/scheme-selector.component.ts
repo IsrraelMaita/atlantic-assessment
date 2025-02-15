@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ColorSchemeService } from 'src/app/services/color-scheme.service';
+
+import { ColorSchemeService } from 'src/app/core/services/color-scheme.service';
 
 @Component({
   selector: 'app-scheme-selector',
