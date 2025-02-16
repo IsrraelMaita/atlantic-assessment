@@ -1,7 +1,8 @@
 # AtlanticAssesment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
-Node version: node v16.14.2
+
+Node version: 16.14.2
 
 Ps: If need to change between node version constantly you should maybe check [NVM](https://github.com/nvm-sh/nvm) :)
 
