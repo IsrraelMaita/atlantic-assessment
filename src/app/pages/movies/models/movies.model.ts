@@ -22,7 +22,18 @@ export interface MoviesResponse {
   total_results: number;
 }
 
-export interface MoviesParameters {
-  page?: number;
-  sort_by?: string;
+export interface Genre {
+  id: number;
+  name: string;
+}
+
+export interface GenresResponse {
+  genres: Genre[];
+}
+
+export enum MovieQueryParams {
+  currentPage = 'page',
+  sortType = 'sort_by',
+  genres = 'with_genres',
+  releaseYear = 'primary_release_year',
 }

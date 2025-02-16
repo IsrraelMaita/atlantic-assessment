@@ -28,3 +28,19 @@
   justify-content: center;
   margin-top: 1rem;
 }
+
+.filters-container {
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.filters-container__selector {
+  width: -webkit-fill-available;
+  max-width: 20rem;
+}
+
+.filters-container__button {
+  height: 55px;
+}

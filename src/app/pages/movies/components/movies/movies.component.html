@@ -1,5 +1,57 @@
 <div class="movies-container">
-  <p>movies works!</p>
+  
+  <div class="filters-container">
+
+    <mat-form-field
+      [color]="isDarkMode? 'accent' : 'primary'"
+      appearance="outline"
+      class="filters-container__selector"
+    >
+      <mat-label>Sort by</mat-label>
+      <mat-select [(ngModel)]="selectedSortType" name="sortBy">
+        <mat-option *ngFor="let sortBy of sortByTypes" [value]="sortBy.value">
+          {{sortBy.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field
+      [color]="isDarkMode? 'accent' : 'primary'"
+      appearance="outline"
+      class="filters-container__selector"
+    >
+      <mat-label>Select genre</mat-label>
+      <mat-select [(ngModel)]="selectedGenres" name="genre" multiple>
+        <mat-option *ngFor="let genre of genresList" [value]="genre.id">
+          {{genre.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field
+      [color]="isDarkMode? 'accent' : 'primary'"
+      appearance="outline"
+      class="filters-container__selector"
+    >
+      <mat-label>Release year</mat-label>
+      <mat-select [(ngModel)]="selectedYear" name="year">
+        <mat-option *ngFor="let year of years" [value]="year">
+          {{year}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <button
+      mat-raised-button
+      color="primary"
+      class="filters-container__button"
+      (click)="onSearch()"
+    >
+      <mat-icon matPrefix>search</mat-icon>
+      Search
+    </button>
+  </div>
+  
 
   <div class="movies-cards-container">
     <ng-container *ngFor="let movie of moviesList">
