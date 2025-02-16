@@ -23,7 +23,7 @@ export class MovieCardComponent implements OnInit, OnDestroy {
   constructor(private colorSchemeService: ColorSchemeService) { }
 
   ngOnInit(): void {
-    this.movieImageURL += this.movie.poster_path
+    this.movieImageURL += this.movie?.poster_path
     this.isDarkMode = this.colorSchemeService.isDarkTheme();
     this.handleSuscriptions();
   }

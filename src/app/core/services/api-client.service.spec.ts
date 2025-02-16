@@ -39,14 +39,10 @@ describe('ApiClientService', () => {
       username: "imaita"
     };
 
-    console.log('??');
-
     // Call the service method
     apiClientService.getAccountDetail().subscribe(data => {
       expect(data).toEqual(mockData);
     });
-
-    console.log('++');
 
     // Expect an HTTP GET request to the API URL
     const req = httpMock.expectOne('https://api.themoviedb.org/3/account/21820591');

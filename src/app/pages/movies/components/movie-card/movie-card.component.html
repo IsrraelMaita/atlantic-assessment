@@ -6,7 +6,7 @@
 >
   <div *ngIf="!showFullInfo" class="card-header-content" [ngClass]="{'dark-mode': isDarkMode}">
     <mat-card-header>
-      <mat-card-title><p>{{movie.title}}</p></mat-card-title>
+      <mat-card-title><p id="movie-title">{{movie.title}}</p></mat-card-title>
       <mat-card-subtitle>
         <p>{{movie.release_date | date }}</p>
       </mat-card-subtitle>
