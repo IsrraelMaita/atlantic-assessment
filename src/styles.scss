@@ -111,26 +111,26 @@ $md-atlantic-warn-pallete: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$atlantic-assesment-primary: mat.define-palette($md-atlantic-primary-pallete);
-$atlantic-assesment-accent: mat.define-palette($md-atlantic-secondary-pallete);
+$atlantic-assessment-primary: mat.define-palette($md-atlantic-primary-pallete);
+$atlantic-assessment-accent: mat.define-palette($md-atlantic-secondary-pallete);
 
 // The warn palette is optional (defaults to red).
-$atlantic-assesment-warn: mat.define-palette($md-atlantic-warn-pallete);
+$atlantic-assessment-warn: mat.define-palette($md-atlantic-warn-pallete);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$atlantic-assesment-theme-light: mat.define-light-theme((
+$atlantic-assessment-theme-light: mat.define-light-theme((
   color: (
-    primary: $atlantic-assesment-primary,
-    accent: $atlantic-assesment-accent,
+    primary: $atlantic-assessment-primary,
+    accent: $atlantic-assessment-accent,
   ),
   typography: mat.define-typography-config(),
 ));
 
-$atlantic-assesment-theme-dark: mat.define-dark-theme((
+$atlantic-assessment-theme-dark: mat.define-dark-theme((
   color: (
-    primary: $atlantic-assesment-primary,
-    accent: $atlantic-assesment-accent,
+    primary: $atlantic-assessment-primary,
+    accent: $atlantic-assessment-accent,
   ),
   typography: mat.define-typography-config(),
 ));
@@ -138,10 +138,10 @@ $atlantic-assesment-theme-dark: mat.define-dark-theme((
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($atlantic-assesment-theme-light);
+@include mat.all-component-themes($atlantic-assessment-theme-light);
 
 .color-scheme-dark {
-  @include mat.all-component-colors($atlantic-assesment-theme-dark);
+  @include mat.all-component-colors($atlantic-assessment-theme-dark);
 }
 /* You can add global styles to this file, and also import other style files */
 
