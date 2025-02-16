@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar'
+import { Component, OnInit, ViewChild } from '@angular/core';
 ;
 import { Actor } from '../../models/actors.model';
 import { ActorsService } from '../../services/actors.service';
+import { ActorsChartsComponent } from '../actors-charts/actors-charts.component';
 
 @Component({
   selector: 'app-actors',
@@ -13,7 +14,9 @@ import { ActorsService } from '../../services/actors.service';
 export class ActorsComponent implements OnInit {
 
   actorsList: Actor[] = []
-  disabledRefresh = false;
+  disabledActions = false;
+
+  @ViewChild(ActorsChartsComponent) actorsChartsComponent!: ActorsChartsComponent;
 
   constructor(
     private actorsService: ActorsService,
@@ -26,12 +29,12 @@ export class ActorsComponent implements OnInit {
 
   getActors(): void {
     this.actorsList = [];
-    this.disabledRefresh = true;
+    this.disabledActions = true;
     const page = this.getRandomPage(40);
     this.actorsService.getActors(page).subscribe({
       next: (resp) => {
         this.actorsList = resp.results;
-        this.disabledRefresh = false;
+        this.disabledActions = false;
       },
       error: (err: HttpErrorResponse) => {
         this.snackBar.open(err.error.status_message, 'Close', {
@@ -39,7 +42,7 @@ export class ActorsComponent implements OnInit {
           verticalPosition: 'top',
         });
         this.actorsList = [];
-        this.disabledRefresh = false;
+        this.disabledActions = false;
       }
     })
   }
@@ -48,5 +51,12 @@ export class ActorsComponent implements OnInit {
     return Math.floor(Math.random() * limit) + 1;
   }
 
+  onDrawBarChart(): void {
+    this.actorsChartsComponent.createBarChart()
+  }
+
+  onDrawPieChart(): void {
+    this.actorsChartsComponent.createPieChart()
+  }
 
 }

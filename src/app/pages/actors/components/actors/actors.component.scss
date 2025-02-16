@@ -2,6 +2,9 @@
   margin: 5rem;
 }
 
-.actor-container__refresh {
+.actor-container__buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   margin-bottom: 2rem;
 }

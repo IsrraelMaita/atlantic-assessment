@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Subject } from 'rxjs';
 
@@ -14,7 +14,7 @@ import { NavigationButtons, PAGINATION_ITEMS, SORT_BY_TYPES } from 'src/app/util
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })
-export class MoviesComponent implements OnInit {
+export class MoviesComponent implements OnInit, OnDestroy {
 
   destroy$ = new Subject<boolean>();
 
