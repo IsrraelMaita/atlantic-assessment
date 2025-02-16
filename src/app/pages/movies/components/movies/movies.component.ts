@@ -4,10 +4,10 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Subject } from 'rxjs';
 
-import { Genre, Movie, MovieQueryParams } from '../../models/movies.model';
 import { MoviesService } from '../../services/movies.service';
+import { Genre, Movie, MovieQueryParams } from '../../models/movies.model';
 import { ColorSchemeService } from 'src/app/core/services/color-scheme.service';
-import { NavigationButtons, PAGINATION_ITEMS, SORT_BY_TYPES } from 'src/app/resources/filter-items';
+import { NavigationButtons, PAGINATION_ITEMS, SORT_BY_TYPES } from 'src/app/utils/filter-items';
 
 @Component({
   selector: 'app-movies',
@@ -32,8 +32,8 @@ export class MoviesComponent implements OnInit {
   totalPages = 0;
 
   constructor(
-    private moviesService: MoviesService,
     private colorSchemeService: ColorSchemeService,
+    private moviesService: MoviesService,
     private snackBar: MatSnackBar,
   ) { }
 

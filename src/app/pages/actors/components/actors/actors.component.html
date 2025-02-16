@@ -1,0 +1,15 @@
+<div class="actor-container">
+  <button
+    mat-raised-button
+    color="primary"
+    class="actor-container__refresh"
+    [disabled]="disabledRefresh"
+    (click)="getActors()"
+    >
+    <mat-icon matPrefix>refresh</mat-icon>
+    Refresh
+  </button>
+  <ng-container *ngIf="actorsList.length > 0">
+    <app-actors-charts [actorsList]="actorsList"></app-actors-charts>
+</ng-container>
+</div>

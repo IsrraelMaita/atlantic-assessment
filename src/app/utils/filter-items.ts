@@ -58,4 +58,27 @@ export const SORT_BY_TYPES = [
     name: 'Lower ranking',
     value: 'vote_average.asc'
   }
+];
+
+export const CHART_COLORS = [
+  '#ff5733',
+  '#33ff57',
+  '#3357ff',
+  '#ff33a1',
+  '#ffd7dd',
+  '#4b0082',
+  '#00ffff',
+  '#ff4500',
+  '#32cd32',
+  '#ff1493',
+  '#8a2be2',
+  '#ff6347',
+  '#c71585',
+  '#ffd700',
+  '#008080',
+  '#dc143c',
+  '#1e90ff',
+  '#adff2f',
+  '#d2691e',
+  '#20b2aa',
 ]
