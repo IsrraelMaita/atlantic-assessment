@@ -16,7 +16,7 @@ Run `npm start` for a dev server. It will automatically open a tab on `http://lo
 
 Run `npm test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-This will automatically run a API consumption test and a Unit test.
+This will automatically run an API consumption test and an Unit test.
 
 ## API
 
