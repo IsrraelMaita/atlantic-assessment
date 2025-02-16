@@ -17,9 +17,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatButtonToggleModule } from '@angular/material/button-toggle'
 @NgModule({
   declarations: [],
   imports: [
+    MatButtonToggleModule,
     MatSlideToggleModule,
     MatFormFieldModule,
     MatPaginatorModule,
@@ -40,6 +42,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatListModule,
   ],
   exports: [
+    MatButtonToggleModule,
     MatSlideToggleModule,
     MatFormFieldModule,
     MatPaginatorModule,

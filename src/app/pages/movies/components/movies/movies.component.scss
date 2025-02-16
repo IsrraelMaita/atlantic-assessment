@@ -1,6 +1,30 @@
 .movies-container {
-  margin: 2rem;
+  margin: 5rem 3rem 10rem 3rem;
+}
+
+.movies-cards-container {
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
+}
+
+.navigation-button-icon {
+  display: flex;
+  align-items: center;
+}
+
+.paginator-container {
+  margin: 2rem;
+  position: absolute;
+  right: 0;
+}
+
+.paginator-container__button {
+  height: 50px;
+}
+
+.paginator-container__info {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }

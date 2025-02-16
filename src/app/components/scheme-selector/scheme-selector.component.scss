@@ -5,3 +5,11 @@
   justify-content: flex-end;
   width: 100%;
 }
+
+.theme-mode-icon--active {
+  color: var(--color-accent);
+}
+
+.theme-mode-icon--inactive {
+  color: gray;
+}

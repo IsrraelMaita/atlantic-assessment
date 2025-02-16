@@ -17,7 +17,7 @@ export class MoviesService {
     private apiClientPrefixBuilderService: ApiClientPrefixBuilderService
   ) {}
 
-  getMovies(): Observable<MoviesResponse> {
-    return this.httpClient.get<MoviesResponse>(this.urls.movies);
+  getMovies(queryString?: string): Observable<MoviesResponse> {
+    return this.httpClient.get<MoviesResponse>(`${this.urls.movies}${queryString}`);
   }
 }
